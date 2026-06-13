@@ -1887,11 +1887,6 @@ DISABLE_SECURITY() {
 
     echo -e "Disabling security related things."
 
-    if [ -f "${EXTRACTED_FIRM_DIR}/product/etc/build.prop" ]; then
-        echo "- Disabling factory reset protection from product."
-        BUILD_PROP "$EXTRACTED_FIRM_DIR" "product" "ro.frp.pst" ""
-    fi
-
 	if [ -f "${EXTRACTED_FIRM_DIR}/vendor/build.prop" ]; then
         echo "- Disabling factory reset protection from vendor."
 		BUILD_PROP "$EXTRACTED_FIRM_DIR" "vendor" "ro.frp.pst" ""
@@ -1943,41 +1938,6 @@ ADD_SAMSUNG_FLAGSHIP_APPS() {
 	
     if [ "$PRODUCT_BRAND" != "samsung" ]; then
         return 1
-    fi
-
-    # ================= SMART MANAGER =================
-    echo "- Adding China smart manager."
-	
-	if [ ! -d "${EXTRACTED_FIRM_DIR}/system/system/priv-app/SmartManagerCN" ] && \
-        [ ! -s "$(pwd)/QuantumROM/Mods/Apps/Samsung_SmartManagerCN_Android_${ANDROID_VERSION}.zip" ]; then
-
-        if curl -fsSL --connect-timeout 5 https://www.google.com >/dev/null; then
-            wget --no-check-certificate \
-                "https://github.com/SN-Abdullah-Al-Noman/Samsung_Special/releases/download/Android_${ANDROID_VERSION}/Samsung_SmartManagerCN_Android_${ANDROID_VERSION}.zip" \
-                -O "$(pwd)/QuantumROM/Mods/Apps/Samsung_SmartManagerCN_Android_${ANDROID_VERSION}.zip"
-        else
-            echo "- No internet connection available. Unable to download: Samsung_SmartManagerCN_Android_${ANDROID_VERSION}.zip"
-            return 1
-        fi
-    fi
-
-    if [ ! -d "${EXTRACTED_FIRM_DIR}/system/system/priv-app/SmartManagerCN" ] && \
-        [ ! -s "$(pwd)/QuantumROM/Mods/Apps/Samsung_SmartManagerCN_Android_${ANDROID_VERSION}.zip" ]; then
-
-        rm -rf "$(pwd)/QuantumROM/Mods/Apps/Samsung_SmartManagerCN_Android_${ANDROID_VERSION}"
-        unzip -o "$(pwd)/QuantumROM/Mods/Apps/Samsung_SmartManagerCN_Android_${ANDROID_VERSION}.zip" \
-            -d "$(pwd)/QuantumROM/Mods/Apps/Samsung_SmartManagerCN_Android_${ANDROID_VERSION}" >/dev/null 2>&1
-
-        rm -rf "${EXTRACTED_FIRM_DIR}/system/system/priv-app/AppLock"
-        rm -rf "${EXTRACTED_FIRM_DIR}/system/system/priv-app/Firewall"
-        rm -rf "${EXTRACTED_FIRM_DIR}/system/system/priv-app/SmartManager_v5"
-        rm -rf "${EXTRACTED_FIRM_DIR}/system/system/priv-app/SmartManagerCN"
-
-        cp -rfa "$(pwd)/QuantumROM/Mods/Apps/Samsung_SmartManagerCN_Android_${ANDROID_VERSION}/." "${EXTRACTED_FIRM_DIR}/"
-
-        UPDATE_FLOATING_FEATURE "$FLOATING_FEATURE_FILE_DIRECTORY" \
-            "SEC_FLOATING_FEATURE_SMARTMANAGER_CONFIG_PACKAGE_NAME" \
-            "com.samsung.android.sm_cn"
     fi
 
     # ================= PHOTO EDITOR AI FULL =================
