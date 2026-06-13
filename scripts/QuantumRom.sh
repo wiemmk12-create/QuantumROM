@@ -2066,6 +2066,9 @@ APPLY_CUSTOM_FEATURES() {
 	BUILD_PROP "$EXTRACTED_FIRM_DIR" "system" "ro.config.dmverity" "N"
 
 	BUILD_PROP "$EXTRACTED_FIRM_DIR" "product" "ro.config.dmverity" "N"
+	BUILD_PROP "$EXTRACTED_FIRM_DIR" "product" "remote_provisioning.enable_rkpd" "true"
+	BUILD_PROP "$EXTRACTED_FIRM_DIR" "product" "remote_provisioning.hostname" "remoteprovisioning.googleapis.com"
+	BUILD_PROP "$EXTRACTED_FIRM_DIR" "product" "remote_provisioning.connect_timeout_millis" "2000"
 
     # Apply custom floating feature.
 	APPLY_CUSTOM_FLOATING_FEATURE "$FLOATING_FEATURE_FILE_DIRECTORY"
