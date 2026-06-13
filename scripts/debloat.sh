@@ -3,18 +3,16 @@
 
 # GENERAL / SYSTEM / BLOAT
 DEBLOAT_APPS=(
-"HMT" "PaymentFramework" "DigitalWellbeing" "FactoryCameraFB"
+"HMT" "PaymentFramework" "FactoryCameraFB"
 "WlanTest" "AirGlance" "AirReadingGlass" "AndroidGlassesCore"
-"SOAgent77" "ARDrawing" "ARZone" "BGMProvider"
-"SingleTakeService" "BlockchainBasicKit"
-"Cameralyzer" "DictDiotekForSec" "EasymodeContactsWidget81"
-"Fast" "FunModeSDK" "GearManagerStub" "KidsHome_Installer"
-"LinkSharing_v11" "LiveDrawing" "MAPSAgent" "MdecService"
-"MinusOnePage" "MoccaMobile" "Netflix_stub" "Notes40"
-"ParentalCare" "PhotoTable" "SmartReminder"
-"UnifiedWFC" "UniversalMDMClient" "VideoEditorLite_Dream_N"
-"VoiceAccess" "VTCameraSetting"
-"WebManual" "WifiGuider" "AutomationTest_FB" "FactoryTestProvider"
+"SOAgent77" "ARDrawing" "ARZone"
+"BlockchainBasicKit"
+"Cameralyzer" "DictDiotekForSec"
+"LinkSharing_v11" "LiveDrawing" "MAPSAgent"
+"MinusOnePage" "Netflix_stub" "Notes40"
+"SmartReminder"
+"VoiceAccess"
+"WebManual" "AutomationTest_FB" "FactoryTestProvider"
 )
 
 
@@ -35,15 +33,15 @@ CARRIER_APPS=(
 
 # SAMSUNG FEATURES / APPS
 SAMSUNG_APPS=(
-"SamsungCalendar" "SamsungTTS" "SamsungBilling"
+"SamsungCalendar"
 "OneDrive_Samsung_v3" "SamsungCarKeyFw"
-"SamsungPass" "SamsungSmartSuggestions"
+"SamsungPass"
 "SamsungPassAutofill_v1"
 "AirCommand" "AppUpdateCenter"
 "AREmojiEditor" "AvatarEmojiSticker"
 "AvatarEmojiSticker_S" "AvatarPicker"
-"GalleryWidget" "LiveStickers" "StoryService"
-"StickerFaceARAvatar" "sticker"
+"LiveStickers"
+"sticker"
 )
 
 
@@ -92,11 +90,10 @@ MISC_SERVICES=(
 "SumeNNService" "SVoiceIME"
 "SwiftkeyIme" "SwiftkeySetting"
 "SystemUpdate" "TADownloader"
-"TalkbackSE" "TaPackAuthFw"
+"TaPackAuthFw"
 "UltraDataSaving_O" "Upday"
 "YourPhone_P1_5" "DsmsAPK"
-"vexfwk_service" "VexScanner"
-"LiveEffectService" "MyGalaxyService"
+"MyGalaxyService"
 )
 
 
