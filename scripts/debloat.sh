@@ -3,7 +3,7 @@
 
 # GENERAL / SYSTEM / BLOAT
 DEBLOAT_APPS=(
-"HMT" "PaymentFramework" "FactoryCameraFB"
+"HMT" "PaymentFramework" "FactoryCameraFB" "WlanTest"
 "WlanTest" "AirGlance" "AirReadingGlass" "AndroidGlassesCore"
 "SOAgent77" "ARDrawing" "ARZone"
 "BlockchainBasicKit"
@@ -33,7 +33,7 @@ CARRIER_APPS=(
 
 # SAMSUNG FEATURES / APPS
 SAMSUNG_APPS=(
-"SamsungCalendar"
+"SamsungCalendar" "ClockPackage" "OfflineLanguageModel_stub" "IpsGeofence" "DigitalKey"
 "OneDrive_Samsung_v3" "SamsungCarKeyFw"
 "SamsungPass"
 "SamsungPassAutofill_v1"
@@ -55,7 +55,7 @@ SAMSUNG_AI=(
 
 # GOOGLE APPS
 GOOGLE_APPS=(
-"SpeechServicesByGoogle" "Maps" "Duo" "Photos"
+"SpeechServicesByGoogle" "Maps" "Duo" "Photos" "Chrome"
 "AssistantShell" "BardShell" "DuoStub"
 "GoogleCalendarSyncAdapter" "AndroidDeveloperVerifier"
 "AndroidAutoStub" "FamilyLinkParentalControls"
@@ -68,14 +68,6 @@ GOOGLE_APPS=(
 FACEBOOK_APPS=(
 "FBAppManager_NS" "FBInstaller_NS" "FBServices"
 )
-
-
-# DRIVERS
-HARDWARE_DRIVERS=(
-"DevGPUDriver-EX2200"
-"GameDriver-EX2100" "GameDriver-EX2200" "GameDriver-SM8150"
-)
-
 
 # MISC / SERVICES
 MISC_SERVICES=(
@@ -146,6 +138,29 @@ REMOVE_FABRIC_CRYPTO() {
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/KmxService"
 }
 
+SYSTEM_EXT_DEBLOAT() {
+    if [ "$#" -ne 1 ]; then
+        echo -e "Usage: ${FUNCNAME[0]} <EXTRACTED_FIRM_DIR>"
+        return 1
+    fi
+
+	local EXTRACTED_FIRM_DIR="$1"
+    echo -e "SYSTEM_EXT_DEBLOAT"
+    rm -rf "$EXTRACTED_FIRM_DIR/system//system_ext/framework/org.carconnectivity.android.digitaykey.rangingintent.jar"
+    rm -rf "$EXTRACTED_FIRM_DIR/system//system_ext/framework/org.carconnectivity.android.digitaykey.secureelement.jar"
+}
+
+PRODUCT_DEBLOAT() {
+    if [ "$#" -ne 1 ]; then
+        echo -e "Usage: ${FUNCNAME[0]} <EXTRACTED_FIRM_DIR>"
+        return 1
+    fi
+
+	local EXTRACTED_FIRM_DIR="$1"
+    echo -e "PRODUCT_DEBLOAT"
+    rm -rf "$EXTRACTED_FIRM_DIR/system/product/overlay/GmsConfigOverlaySearchSelector.apk"
+}
+
 
 KICK() {
     if [ "$#" -lt 2 ]; then
@@ -200,20 +215,17 @@ DEBLOAT() {
     KICK "$EXTRACTED_FIRM_DIR" "${SAMSUNG_AI[@]}"
     KICK "$EXTRACTED_FIRM_DIR" "${GOOGLE_APPS[@]}"
     KICK "$EXTRACTED_FIRM_DIR" "${FACEBOOK_APPS[@]}"
-    KICK "$EXTRACTED_FIRM_DIR" "${HARDWARE_DRIVERS[@]}"
     KICK "$EXTRACTED_FIRM_DIR" "${MISC_SERVICES[@]}"
     KICK "$EXTRACTED_FIRM_DIR" "${KNOX_APPS[@]}"
 	REMOVE_FABRIC_CRYPTO "$EXTRACTED_FIRM_DIR"
 
-	echo -e "- Deleting unnecessary files and folders."
-    rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/SamsungTTS*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.bprof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.prof"
-    rm -rf "$EXTRACTED_FIRM_DIR/system/system/hidden"
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/hidden/SmartTutor"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/preload"
 	rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/mediasearch"
 	rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/MediaSearch"
-	rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/GameDriver-*
+	rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/SecSettings/oat"
 	rm -rf "$EXTRACTED_FIRM_DIR/system/system/skt"
 	rm -rf "$EXTRACTED_FIRM_DIR/system/system/tts"
 	rm -rf "$EXTRACTED_FIRM_DIR/product/app/Gmail2/oat"
