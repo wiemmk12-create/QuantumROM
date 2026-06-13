@@ -5,15 +5,15 @@
 DEBLOAT_APPS=(
 "HMT" "PaymentFramework" "DigitalWellbeing" "FactoryCameraFB"
 "WlanTest" "AirGlance" "AirReadingGlass" "AndroidGlassesCore"
-"SOAgent77" "ARCore" "ARDrawing" "ARZone" "BGMProvider"
-"SingleTakeService" "BixbyWakeup" "BlockchainBasicKit"
+"SOAgent77" "ARDrawing" "ARZone" "BGMProvider"
+"SingleTakeService" "BlockchainBasicKit"
 "Cameralyzer" "DictDiotekForSec" "EasymodeContactsWidget81"
 "Fast" "FunModeSDK" "GearManagerStub" "KidsHome_Installer"
 "LinkSharing_v11" "LiveDrawing" "MAPSAgent" "MdecService"
 "MinusOnePage" "MoccaMobile" "Netflix_stub" "Notes40"
-"ParentalCare" "PhotoTable" "SmartReminder" "SmartSwitchStub"
+"ParentalCare" "PhotoTable" "SmartReminder"
 "UnifiedWFC" "UniversalMDMClient" "VideoEditorLite_Dream_N"
-"VisionIntelligence3.7" "VoiceAccess" "VTCameraSetting"
+"VoiceAccess" "VTCameraSetting"
 "WebManual" "WifiGuider" "AutomationTest_FB" "FactoryTestProvider"
 )
 
@@ -39,8 +39,8 @@ SAMSUNG_APPS=(
 "OneDrive_Samsung_v3" "SamsungCarKeyFw"
 "SamsungPass" "SamsungSmartSuggestions"
 "SamsungPassAutofill_v1"
-"AirCommand" "AppUpdateCenter" "AREmoji"
-"AREmojiEditor" "AutoDoodle" "AvatarEmojiSticker"
+"AirCommand" "AppUpdateCenter"
+"AREmojiEditor" "AvatarEmojiSticker"
 "AvatarEmojiSticker_S" "AvatarPicker"
 "GalleryWidget" "LiveStickers" "StoryService"
 "StickerFaceARAvatar" "sticker"
@@ -49,11 +49,9 @@ SAMSUNG_APPS=(
 
 # SAMSUNG AI / SMART
 SAMSUNG_AI=(
-"LiveTranscribe" "Bixby" "BixbyInterpreter"
-"BixbyVisionFramework3.5" "SettingsBixby"
+"LiveTranscribe" "SettingsBixby"
 "SmartEye" "SmartPush" "SmartPush_64"
 "SmartThingsKit" "SmartTouchCall"
-"VisionIntelligence3.7"
 )
 
 
@@ -62,7 +60,7 @@ GOOGLE_APPS=(
 "SpeechServicesByGoogle" "Maps" "Duo" "Photos"
 "AssistantShell" "BardShell" "DuoStub"
 "GoogleCalendarSyncAdapter" "AndroidDeveloperVerifier"
-"YourPhone_Stub" "AndroidAutoStub" "FamilyLinkParentalControls"
+"AndroidAutoStub" "FamilyLinkParentalControls"
 "AndroidSystemIntelligence" "GoogleRestore"
 "SamsungMessages" "SearchSelector" "PlayAutoInstallConfig" "FamilyLinkParentalControls"
 )
@@ -84,13 +82,13 @@ HARDWARE_DRIVERS=(
 # MISC / SERVICES
 MISC_SERVICES=(
 "AuthFramework" "Discover" "DiscoverSEP"
-"EarphoneTypeC" "EasySetup" "FotaAgent"
-"HashTagService" "LedCoverService"
-"LinkToWindowsService" "MemorySaver_O_Refresh"
-"MultiControl" "MultiControlVP6"
-"OMCAgent5" "OneStoreService" "FactoryAirCommandManager"
+"FotaAgent"
+"LedCoverService"
+"MemorySaver_O_Refresh"
+"MultiControlVP6"
+"OneStoreService" "FactoryAirCommandManager"
 "SOAgent7" "SOAgent75" "SOAgent76"
-"SolarAudio-service" "SPPPushClient"
+"SolarAudio-service"
 "SumeNNService" "SVoiceIME"
 "SwiftkeyIme" "SwiftkeySetting"
 "SystemUpdate" "TADownloader"
