@@ -12,7 +12,7 @@ DEBLOAT_APPS=(
 "MinusOnePage" "Netflix_stub" "Notes40"
 "SmartReminder"
 "VoiceAccess"
-"WebManual" "AutomationTest_FB" "FactoryTestProvider"
+"WebManual" "AutomationTest_FB" "FactoryTestProvider" "GameOptimizingService"
 )
 
 
@@ -35,7 +35,7 @@ CARRIER_APPS=(
 SAMSUNG_APPS=(
 "SamsungCalendar" "ClockPackage" "OfflineLanguageModel_stub" "IpsGeofence" "DigitalKey"
 "OneDrive_Samsung_v3" "SamsungCarKeyFw"
-"SamsungPass"
+"SamsungPass" "SamsungSmartSuggestions"
 "SamsungPassAutofill_v1"
 "AirCommand" "AppUpdateCenter"
 "AREmojiEditor" "AvatarEmojiSticker"
@@ -47,7 +47,7 @@ SAMSUNG_APPS=(
 
 # SAMSUNG AI / SMART
 SAMSUNG_AI=(
-"LiveTranscribe" "SettingsBixby"
+"LiveTranscribe" "SettingsBixby" "Bixby"
 "SmartEye" "SmartPush" "SmartPush_64"
 "SmartThingsKit" "SmartTouchCall"
 )
@@ -60,7 +60,7 @@ GOOGLE_APPS=(
 "GoogleCalendarSyncAdapter" "AndroidDeveloperVerifier"
 "AndroidAutoStub" "FamilyLinkParentalControls"
 "AndroidSystemIntelligence" "GoogleRestore"
-"SamsungMessages" "SearchSelector" "PlayAutoInstallConfig" "FamilyLinkParentalControls"
+"SamsungMessages" "SearchSelector" "PlayAutoInstallConfig" "FamilyLinkParentalControls" "Messages"
 )
 
 
@@ -76,7 +76,7 @@ MISC_SERVICES=(
 "LedCoverService"
 "MemorySaver_O_Refresh"
 "MultiControlVP6"
-"OneStoreService" "FactoryAirCommandManager"
+"OMCAgent5" "OneStoreService" "FactoryAirCommandManager"
 "SOAgent7" "SOAgent75" "SOAgent76"
 "SolarAudio-service"
 "SumeNNService" "SVoiceIME"
